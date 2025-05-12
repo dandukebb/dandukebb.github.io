@@ -1,8 +1,244 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Colors Cheat Sheet</title>
+  <style>
+    /* === BASE STYLES === */
+    :root {
+      --primary: #4361ee;
+      --primary-light: rgba(67, 97, 238, 0.2);
+      --dark: #2b2d42;
+      --light: #f8f9fa;
+    }
 
-  <body>
-    <h1>Daniel Smith</h1>
-    <p>Welcome to my website!</p>
-    <img src="https://content.codecademy.com/articles/github-pages-via-web-app-happy-ice-cream.gif" />
-  </body>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: var(--light);
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      color: var(--primary);
+      margin-bottom: 0.5em;
+    }
+
+    /* === HEADER === */
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* === COLOR FORMATS TABLE === */
+    .formats-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 2rem;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .formats-table th, .formats-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .formats-table th {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .formats-table tr:hover {
+      background-color: var(--primary-light);
+    }
+
+    /* === COLOR SWATCHES === */
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .swatch {
+      height: 100px;
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-end;
+      padding: 10px;
+      color: white;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* === ALPHA DEMO === */
+    .alpha-demo {
+      height: 80px;
+      background: linear-gradient(to right, 
+        rgba(255, 0, 0, 1), 
+        rgba(255, 0, 0, 0.5), 
+        rgba(255, 0, 0, 0));
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+
+    /* === FOOTER === */
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CSS Colors Cheat Sheet</h1>
+    <p>A quick reference guide for color formats in CSS</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Color Formats</h2>
+      <table class="formats-table">
+        <thead>
+          <tr>
+            <th>Format</th>
+            <th>Syntax</th>
+            <th>Example</th>
+            <th>Use Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Named Color</td>
+            <td><code>colorname</code></td>
+            <td><code>rebeccapurple</code></td>
+            <td>Quick prototyping</td>
+          </tr>
+          <tr>
+            <td>HEX</td>
+            <td><code>#RRGGBB</code></td>
+            <td><code>#4361ee</code></td>
+            <td>Standard in design tools</td>
+          </tr>
+          <tr>
+            <td>RGB</td>
+            <td><code>rgb(r, g, b)</code></td>
+            <td><code>rgb(67, 97, 238)</code></td>
+            <td>Programmatic color generation</td>
+          </tr>
+          <tr>
+            <td>RGBA</td>
+            <td><code>rgba(r, g, b, a)</code></td>
+            <td><code>rgba(67, 97, 238, 0.5)</code></td>
+            <td>Transparency support</td>
+          </tr>
+          <tr>
+            <td>HSL</td>
+            <td><code>hsl(h, s%, l%)</code></td>
+            <td><code>hsl(230, 83%, 60%)</code></td>
+            <td>Human-readable adjustments</td>
+          </tr>
+          <tr>
+            <td>HSLA</td>
+            <td><code>hsla(h, s%, l%, a)</code></td>
+            <td><code>hsla(230, 83%, 60%, 0.5)</code></td>
+            <td>Transparency + intuitive tuning</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  <section>
+  <h2>Color Swatches</h2>
+  <div class="swatches">
+    <!-- Reds -->
+    <div class="swatch" style="background-color: #ff6b6b;">
+      #ff6b6b<br>(Modern Red)
+    </div>
+    <div class="swatch" style="background-color: rgba(255, 0, 0, 0.6);">
+      rgba(255,0,0,0.6)<br>(Classic Red)
+    </div>
+
+    <!-- Greens -->
+    <div class="swatch" style="background-color: hsl(120, 76%, 50%);">
+      hsl(120,76%,50%)<br>(Vivid Green)
+    </div>
+    <div class="swatch" style="background-color: #52b788;">
+      #52b788<br>(Mint)
+    </div>
+
+    <!-- Blues -->
+    <div class="swatch" style="background-color: #4361ee;">
+      #4361ee<br>(Brand Blue)
+    </div>
+    <div class="swatch" style="background-color: hsla(210, 100%, 50%, 0.3);">
+      hsla(210,100%,50%,0.3)<br>(Sky Blue)
+    </div>
+
+    <!-- Purples -->
+    <div class="swatch" style="background-color: rebeccapurple;">
+      rebeccapurple<br>(CSS4 Purple)
+    </div>
+    <div class="swatch" style="background-color: rgb(147, 112, 219);">
+      rgb(147,112,219)<br>(Medium Purple)
+    </div>
+
+    <!-- Yellows -->
+    <div class="swatch" style="background-color: hsl(60, 100%, 70%);">
+      hsl(60,100%,70%)<br>(Lemon)
+    </div>
+    <div class="swatch" style="background-color: #ffd166;">
+      #ffd166<br>(Gold)
+    </div>
+
+    <!-- Neutrals -->
+    <div class="swatch" style="background-color: #495057;">
+      #495057<br>(Gray)
+    </div>
+    <div class="swatch" style="background-color: hsla(0, 0%, 20%, 0.8);">
+      hsla(0,0%,20%,0.8)<br>(Dark Transparent)
+    </div>
+  </div>
+</section>
+
+    <section>
+      <h2>Alpha Channel (Transparency)</h2>
+      <p>RGBA/HSLA vs. <code>opacity</code>:</p>
+      <div class="alpha-demo"></div>
+      <p><strong>Key difference:</strong> Alpha affects only the color, while <code>opacity</code> affects the entire element and its children.</p>
+    </section>
+
+    <section>
+      <h2>Pro Tips</h2>
+      <ul>
+        <li>Use <strong>CSS variables</strong>: <code>--main-color: hsl(230, 83%, 60%);</code></li>
+        <li>Check contrast ratios for accessibility (e.g., <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAIM Contrast Checker</a>)</li>
+        <li><code>currentColor</code> inherits the parent's text color</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made by Daniel Smith 2025</p>
+  </footer>
+</body>
 </html>
